@@ -1,3 +1,5 @@
+#python code
+
 import heapq
 
 def dijkstra(graf, start):
