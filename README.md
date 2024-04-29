@@ -1,1 +1,10 @@
 # Dijkstra's algorithm
+## Task
+Given a representation of a weighted undirected graph, use Dijkstra's algorithm, starting from a vertex with a given label A, to find the shortest path connecting it to a vertex with a given label B. The length of a path in a weighted graph is expressed by the sum of the lengths of the edges that constitute it.
+## Algorithm 
+Dijkstra's algorithm finds all the shortest paths in the graph from a selected vertex to all those reached from it, while also calculating the 'cost' (path) of traversing each of these paths. The algorithm repeatedly updates the distances of the graph vertices until it finds the shortest path between them.
+If the edge weights are non-negative, then the problem of finding the path with the lowest access cost (shortest path) is solved by Dijkstra's algorithm. This algorithm allows you to find a path from the starting (source) vertex to any other vertex in the graph (if there is a suitable path).
+By the shortest path connecting two selected vertices in the graph, we mean the path with the lowest traversal cost, i.e. the path with the smallest sum of weights creating this edge path.
+Two values are assigned to each vertex: distance and predecessor. Initially, each vertex has an infinite distance and its predecessor is unknown. The exception is the source vertex for which the distance is 0 (we are already there). If the path to a given vertex does not exist, the distance stored there will be infinity.
+The algorithm implements a greedy approach (it makes the decision at each step that seems to be the most advantageous at a given moment). In each iteration, the one among the unvisited vertices that can be reached at the lowest cost is selected. Once a path to a specific vertex is determined, it will not be modified during the rest of the algorithm.
+The next step is to create a queue of all vertices. Then, until the queue is empty, remove the vertex with the smallest distance and examine all connected vertices for it. If the connection from the selected vertex to the neighbor has a total value lower than the target vertex, the distance and the neighbor should be updated.
